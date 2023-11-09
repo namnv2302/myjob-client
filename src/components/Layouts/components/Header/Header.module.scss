@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  background-color: var(--header-bg-color);
+  border-bottom: 1px solid #e9eaec;
+
+  .left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-width: 50%;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 150px;
+
+      .image {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .right {
+    .button {
+      margin-left: 12px;
+
+      &:last-child {
+        color: var(--white-color);
+        background-color: #212f3f;
+      }
+    }
+  }
+}
