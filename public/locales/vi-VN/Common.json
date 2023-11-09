@@ -1,0 +1,10 @@
+{
+  "Header": {
+    "NavigationBar": {
+      "Home": "Trang chủ",
+      "Job": "Việc làm",
+      "Company": "Công ty",
+      "Blog": "Bài viết"
+    }
+  }
+}

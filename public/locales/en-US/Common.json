@@ -1,0 +1,10 @@
+{
+  "Header": {
+    "NavigationBar": {
+      "Home": "Home",
+      "Job": "Job",
+      "Company": "Company",
+      "Blog": "Blog"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.wrapper {
+  .heading {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 15px;
+
+      .image {
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        font-size: 2.8rem;
+        color: var(--primary-color);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .sub-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .login-form {
+    margin-top: 30px;
+  }
+}

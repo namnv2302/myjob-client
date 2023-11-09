@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button, Layout, Typography } from "antd";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
@@ -12,6 +13,8 @@ import NavigationBar from "@/components/Layouts/components/Header/components/Nav
 const cx = classNames.bind(styles);
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <Layout.Header className={cx("wrapper")}>
       <div className={cx("left")}>
@@ -24,10 +27,21 @@ const Header = () => {
         <NavigationBar />
       </div>
       <div className={cx("right")}>
-        <Button className={cx("button")} size="large" type="primary" ghost>
+        <Button
+          className={cx("button")}
+          size="large"
+          type="primary"
+          ghost
+          onClick={() => router.push(ROUTE_PATH.ACCOUNT_LOGIN)}
+        >
           Đăng nhập
         </Button>
-        <Button className={cx("button")} size="large" type="primary">
+        <Button
+          className={cx("button")}
+          size="large"
+          type="primary"
+          onClick={() => router.push(ROUTE_PATH.ACCOUNT_SIGN_UP)}
+        >
           Đăng ký
         </Button>
         <Button className={cx("button")} size="large">
