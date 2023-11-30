@@ -1,16 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button, Form, Input } from "antd";
 import classNames from "classnames/bind";
 import styles from "@/styles/account/login.module.scss";
 import { login, whoAmI } from "@/apis/auth";
 import { saveAccessToken, saveRefreshToken } from "@/utils/localstorage";
+import { useAppDispatch } from "@/redux/hooks";
+import { login as loginAction } from "@slices/authorization/authorizationSlice";
+import { ROUTE_PATH } from "@/constants/routes";
 
 const cx = classNames.bind(styles);
 
 const LoginForm = () => {
   const [form] = Form.useForm();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleLogin = async ({
@@ -28,9 +34,11 @@ const LoginForm = () => {
         saveRefreshToken(resp.data.refreshToken);
 
         const respAuth = await whoAmI();
-        console.log(respAuth);
+        if (respAuth.data) {
+          dispatch(loginAction(respAuth.data));
+          router.push(ROUTE_PATH.HOME);
+        }
       }
-
       setLoading(false);
     } catch (error) {
       console.log(error);
