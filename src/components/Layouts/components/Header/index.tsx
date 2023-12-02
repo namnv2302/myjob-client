@@ -7,7 +7,7 @@ import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import { ROUTE_PATH } from "@/constants/routes";
 import Image from "next/image";
-import Logo from "@assets/images/logo.jpg";
+import Logo from "@assets/images/logo.png";
 import NavigationBar from "@/components/Layouts/components/Header/components/NavigationBar";
 
 const cx = classNames.bind(styles);
@@ -20,7 +20,7 @@ const Header = () => {
       <div className={cx("left")}>
         <Link href={ROUTE_PATH.HOME} className={cx("logo")}>
           <Image src={Logo} alt="Logo" width={46} className={cx("image")} />
-          <Typography.Title level={2} className="no-margin">
+          <Typography.Title level={2} className={cx("logo-text", "no-margin")}>
             MyJob
           </Typography.Title>
         </Link>

@@ -18,7 +18,13 @@
       margin-right: 150px;
 
       .image {
+        width: 40px;
+        height: 40px;
         margin-right: 10px;
+      }
+
+      .logo-text {
+        color: var(--primary-color);
       }
     }
   }

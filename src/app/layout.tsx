@@ -26,7 +26,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                   fontFamily: "Inter",
                   fontSize: 16,
                   fontWeightStrong: 500,
-                  colorPrimary: "#0859F7",
+                  colorPrimary: "#007456",
                 },
               }}
             >

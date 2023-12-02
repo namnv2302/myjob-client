@@ -8,7 +8,7 @@ import classNames from "classnames/bind";
 import styles from "@/styles/account/login.module.scss";
 import LoginForm from "@/app/account/login/components/LoginForm";
 import { ROUTE_PATH } from "@/constants/routes";
-import Logo from "@assets/images/logo.jpg";
+import Logo from "@assets/images/logo.png";
 
 const cx = classNames.bind(styles);
 
@@ -42,7 +42,9 @@ const LoginPage = () => {
         style={{ display: "block", textAlign: "center", marginTop: "20px" }}
       >
         Bạn chưa có tài khoản?{" "}
-        <Link href={ROUTE_PATH.ACCOUNT_SIGN_UP}>Đăng ký ngay</Link>
+        <Link href={ROUTE_PATH.ACCOUNT_SIGN_UP} className={cx("now")}>
+          Đăng ký ngay
+        </Link>
       </Typography.Text>
     </div>
   );

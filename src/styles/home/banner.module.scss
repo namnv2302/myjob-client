@@ -1,0 +1,131 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 100px;
+  height: 745px;
+  background-color: var(--banner-bg-color);
+  overflow: hidden;
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .wrap-lead {
+    position: absolute;
+    top: -50px;
+    right: 25%;
+    animation: moveLead 4s linear infinite;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 82%;
+      left: -85px;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6),
+        transparent
+      );
+      height: 400px;
+      width: 280px;
+      border-radius: 100% 100% 0 0;
+      z-index: -1;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--content-width-default);
+
+    .title {
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .sub-title {
+      font-size: 1.8rem;
+      color: var(--text-second);
+    }
+
+    .form-search {
+      height: 70px;
+      margin-top: 20px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.03);
+      background-color: var(--bg-color-default);
+
+      .job-name {
+        height: 68px;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        input::placeholder {
+          font-weight: 400;
+        }
+
+        .icon-search {
+          font-size: 2.4rem;
+          padding: 0 8px;
+          color: var(--text-second);
+        }
+      }
+
+      .location {
+        height: 68px;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+
+      .search-btn {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .button {
+          height: 46px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveLead {
+  0% {
+    transform: rotateZ(-20deg);
+  }
+  20% {
+    transform: rotateZ(-5deg);
+  }
+  40% {
+    transform: rotateZ(10deg);
+  }
+  50% {
+    transform: rotateZ(20deg);
+  }
+  60% {
+    transform: rotateZ(10deg);
+  }
+  80% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(-20deg);
+  }
+}

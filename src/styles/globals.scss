@@ -4,10 +4,15 @@
 :root {
   --font-family: "Inter", sans-serif;
 
-  --primary-color: #0859f7;
+  --primary-color: #007456;
   --text-primary: #333;
+  --text-second: #555555;
   --white-color: #fff;
+  --banner-bg-color: #d0b4b2;
+  --border-color: #eee;
+  --bg-color-default: #fff;
 
+  --content-width-default: 1200px;
   --header-height: 80px;
   --header-bg-color: #fff;
   --padding-default: 16px;
@@ -53,6 +58,32 @@ html *::-webkit-scrollbar-track {
 .mj-menu-item::after,
 .mj-menu-submenu::after {
   border: none !important;
+}
+
+.mj-btn-primary,
+.mj-btn-default {
+  box-shadow: none;
+}
+
+.mj-select-selector {
+  border: none !important;
+
+  &:focus-within {
+    box-shadow: none !important;
+  }
+}
+
+.mj-input-affix-wrapper:focus-within {
+  box-shadow: none !important;
+}
+
+.mj-select-selection-item {
+  font-size: 1.8rem;
+}
+
+.mj-select-selection-placeholder {
+  font-size: 1.8rem;
+  font-weight: 400 !important;
 }
 
 .no-margin {

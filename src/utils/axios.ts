@@ -68,28 +68,28 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-axiosInstance.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    const originalRequest = error.config;
-    if (originalRequest.url === "/auth/login") return Promise.reject(error);
-    if (error.response.status === 400 && !originalRequest._retry) {
-      console.log(
-        "[Auth] Access token expired! Reauthorizing with refresh token."
-      );
-      originalRequest._retry = true;
-      const result = await handleRefreshToken();
-      if (result) {
-        console.log("[Auth] Reauthorization success. Retrying last request");
-        saveAccessToken(result?.accessToken);
-        saveRefreshToken(result?.refreshToken);
-        axiosInstance.defaults.headers.common.authorization = `Bearer ${result?.accessToken}`;
-        return axiosInstance(originalRequest);
-      }
-      clearAuthorizationToken();
-    }
-    return Promise.reject(error);
-  }
-);
+// axiosInstance.interceptors.response.use(
+//   (response) => response,
+//   async (error) => {
+//     const originalRequest = error.config;
+//     if (originalRequest.url === "/auth/login") return Promise.reject(error);
+//     if (error.response.status === 400 && !originalRequest._retry) {
+//       console.log(
+//         "[Auth] Access token expired! Reauthorizing with refresh token."
+//       );
+//       originalRequest._retry = true;
+//       const result = await handleRefreshToken();
+//       if (result) {
+//         console.log("[Auth] Reauthorization success. Retrying last request");
+//         saveAccessToken(result?.accessToken);
+//         saveRefreshToken(result?.refreshToken);
+//         axiosInstance.defaults.headers.common.authorization = `Bearer ${result?.accessToken}`;
+//         return axiosInstance(originalRequest);
+//       }
+//       clearAuthorizationToken();
+//     }
+//     return Promise.reject(error);
+//   }
+// );
 
 export default axiosInstance;
