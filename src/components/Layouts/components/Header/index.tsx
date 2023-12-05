@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button, Layout, Typography } from "antd";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
-import { ROUTE_PATH } from "@/constants/routes";
+import { ROUTE_PATH, EMPLOYER_PAGE_URL } from "@/constants/routes";
 import Image from "next/image";
 import Logo from "@assets/images/logo.png";
 import NavigationBar from "@/components/Layouts/components/Header/components/NavigationBar";
@@ -45,7 +45,9 @@ const Header = () => {
           Đăng ký
         </Button>
         <Button className={cx("button")} size="large">
-          Đăng tuyển & tìm hồ sơ
+          <Link href={EMPLOYER_PAGE_URL} target="_blank">
+            Đăng tuyển & tìm hồ sơ
+          </Link>
         </Button>
       </div>
     </Layout.Header>
