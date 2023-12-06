@@ -47,7 +47,7 @@ const SignUpForm = () => {
           rules={[
             {
               required: true,
-              message: "Vui lòng nhập họ và tên.",
+              message: "Vui lòng nhập họ và tên",
             },
           ]}
         >
@@ -59,11 +59,11 @@ const SignUpForm = () => {
           rules={[
             {
               type: "email",
-              message: "Nhập đúng định dạng email.",
+              message: "Nhập đúng định dạng email",
             },
             {
               required: true,
-              message: "Vui lòng nhập email.",
+              message: "Vui lòng nhập email",
             },
           ]}
         >
@@ -75,7 +75,7 @@ const SignUpForm = () => {
           rules={[
             {
               required: true,
-              message: "Vui lòng nhập mật khẩu.",
+              message: "Vui lòng nhập mật khẩu",
             },
           ]}
         >

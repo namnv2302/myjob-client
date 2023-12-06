@@ -61,11 +61,11 @@ const LoginForm = () => {
           rules={[
             {
               type: "email",
-              message: "Nhập đúng định dạng email.",
+              message: "Nhập đúng định dạng email",
             },
             {
               required: true,
-              message: "Vui lòng nhập email.",
+              message: "Vui lòng nhập email",
             },
           ]}
         >
@@ -77,7 +77,7 @@ const LoginForm = () => {
           rules={[
             {
               required: true,
-              message: "Vui lòng nhập mật khẩu.",
+              message: "Vui lòng nhập mật khẩu",
             },
           ]}
         >
