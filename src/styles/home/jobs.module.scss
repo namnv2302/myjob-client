@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--jobs-bg-color);
+
+  .inner {
+    padding: 45px 0;
+    width: var(--content-width-default);
+
+    .label {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+.card {
+  margin-bottom: 20px;
+
+  .head {
+    display: flex;
+    align-items: center;
+
+    .logo-company {
+      margin-right: 16px;
+    }
+
+    .text-info {
+      .job-name {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 4px;
+        max-height: 2.6rem;
+        line-height: 2.6rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+}
