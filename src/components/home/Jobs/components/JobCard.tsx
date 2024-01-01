@@ -30,7 +30,7 @@ const JobCard = ({ data }: { data: IJobs }) => {
       </div>
       <div className={cx("options")}>
         <Tag color="purple">Senior</Tag>
-        <Tag color="green" icon={<DollarOutlined />}>
+        <Tag color="orange" icon={<DollarOutlined />}>
           {data?.salary}
         </Tag>
         <Tag color="green" icon={<EnvironmentOutlined />}>

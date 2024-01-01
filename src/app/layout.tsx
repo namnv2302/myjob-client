@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import "@/styles/globals.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import MainLayout from "@/components/Layouts/MainLayout";
 import LoginLayout from "@/components/Layouts/LoginLayout";

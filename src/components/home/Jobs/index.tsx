@@ -3,7 +3,7 @@ import { Col, Pagination, Row, Typography, message } from "antd";
 import classNames from "classnames/bind";
 import { v4 as uuIdV4 } from "uuid";
 import styles from "@/styles/home/jobs.module.scss";
-import JobCard from "@/components/Jobs/components/JobCard";
+import JobCard from "@/components/home/Jobs/components/JobCard";
 import useJobs from "@/hooks/jobs/useJobs";
 import { IJobs } from "@slices/authorization/authorizationSlice";
 import { getJobsList } from "@/apis/jobs";

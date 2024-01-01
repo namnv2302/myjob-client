@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  .inner {
+    padding: 45px 0;
+    width: var(--content-width-default);
+
+    .label {
+      margin-bottom: 22px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+      padding: var(--padding-default);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+
+      .image {
+        height: 150px;
+        display: block;
+        object-fit: cover;
+      }
+
+      .name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 10px;
+        overflow: hidden;
+        max-height: 2.1rem;
+        line-height: 2.1rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+}
