@@ -52,7 +52,6 @@ const LoginForm = () => {
         form={form}
         layout="vertical"
         requiredMark="optional"
-        size="large"
         onFinish={handleLogin}
       >
         <Form.Item

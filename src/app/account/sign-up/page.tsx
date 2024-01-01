@@ -35,7 +35,7 @@ const SignUpPage = () => {
       >
         Hoặc đăng nhập bằng
       </Typography.Text>
-      <Button size="large" icon={<GoogleOutlined />} type="primary" ghost block>
+      <Button icon={<GoogleOutlined />} type="primary" ghost block>
         Google
       </Button>
       <Typography.Text

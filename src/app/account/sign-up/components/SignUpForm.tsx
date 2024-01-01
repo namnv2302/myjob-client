@@ -38,7 +38,6 @@ const SignUpForm = () => {
         form={form}
         layout="vertical"
         requiredMark="optional"
-        size="large"
         onFinish={handleSignUp}
       >
         <Form.Item
