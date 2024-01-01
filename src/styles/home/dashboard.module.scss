@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--jobs-bg-color);
+
+  .inner {
+    padding: 45px 0;
+    width: var(--content-width-default);
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .number {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      .text {
+        font-size: 1.9rem;
+        color: var(--primary-color);
+      }
+    }
+  }
+}
