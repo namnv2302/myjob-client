@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Col, Pagination, Row, Space, Typography, message } from "antd";
 import classNames from "classnames/bind";
 import { v4 as uuIdV4 } from "uuid";
@@ -9,11 +10,15 @@ import useJobs from "@/hooks/jobs/useJobs";
 import { IJobs } from "@slices/authorization/authorizationSlice";
 import { getJobsList } from "@/apis/jobs";
 import { ROUTE_PATH } from "@/constants/routes";
+import { useAppDispatch } from "@/redux/hooks";
+import { setCurrentJobChoose } from "@/redux/slices/jobs/jobsSlice";
 
 const cx = classNames.bind(styles);
 
 const Jobs = () => {
-  const { data, loading, totalPages, currentPage } = useJobs(1);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  const { data, totalPages, currentPage } = useJobs(1);
   const [current, setCurrent] = useState<number>();
   const [jobsList, setJobsList] = useState<IJobs[]>();
 
@@ -50,7 +55,14 @@ const Jobs = () => {
         </Space>
         <Row gutter={{ lg: 20 }}>
           {jobsList?.map((job) => (
-            <Col key={uuIdV4()} lg={{ span: 12 }}>
+            <Col
+              key={uuIdV4()}
+              lg={{ span: 12 }}
+              onClick={() => {
+                dispatch(setCurrentJobChoose(job));
+                router.push(ROUTE_PATH.JOBS_VIEWALL);
+              }}
+            >
               <JobCard data={job} />
             </Col>
           ))}

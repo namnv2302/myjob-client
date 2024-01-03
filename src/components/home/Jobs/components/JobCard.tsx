@@ -1,16 +1,23 @@
 import { memo } from "react";
-import { Card, Image, Tag, Typography } from "antd";
+import { Card, Image, Tag, Typography, Tooltip } from "antd";
 import { DollarOutlined, EnvironmentOutlined } from "@ant-design/icons";
 import classNames from "classnames/bind";
 import styles from "@/styles/home/jobs.module.scss";
 import { IJobs } from "@slices/authorization/authorizationSlice";
+import { Level } from "@/constants/common";
+import { useAppSelector } from "@/redux/hooks";
 
 const cx = classNames.bind(styles);
 
 const JobCard = ({ data }: { data: IJobs }) => {
+  const { currentJobChoose } = useAppSelector((state) => state.jobs);
+
   return (
-    <Card className={cx("card")} hoverable={true}>
-      <div className={cx("head")}>
+    <Card
+      className={cx("card", { active: data?.id === currentJobChoose?.id })}
+      hoverable={true}
+    >
+      <div className={cx("head-card")}>
         <div className={cx("logo-company")}>
           <Image
             src={data?.company?.logo}
@@ -22,18 +29,34 @@ const JobCard = ({ data }: { data: IJobs }) => {
           />
         </div>
         <div className={cx("text-info")}>
-          <Typography.Title level={5} className={cx("job-name")}>
-            {data?.name}
-          </Typography.Title>
-          <Typography.Text>{data?.company?.companyName}</Typography.Text>
+          <Tooltip title={data?.name}>
+            <Typography.Title level={5} className={cx("job-name")}>
+              {data?.name}
+            </Typography.Title>
+          </Tooltip>
+          <Tooltip title={data?.company?.companyName}>
+            <Typography.Text className={cx("company-name")}>
+              {data?.company?.companyName}
+            </Typography.Text>
+          </Tooltip>
         </div>
       </div>
       <div className={cx("options")}>
-        <Tag color="purple">Senior</Tag>
-        <Tag color="orange" icon={<DollarOutlined />}>
+        <Tag className={cx("option-item")} color="purple">
+          {Level[Number(data.level)].label}
+        </Tag>
+        <Tag
+          className={cx("option-item")}
+          color="orange"
+          icon={<DollarOutlined />}
+        >
           {data?.salary}
         </Tag>
-        <Tag color="green" icon={<EnvironmentOutlined />}>
+        <Tag
+          className={cx("option-item")}
+          color="green"
+          icon={<EnvironmentOutlined />}
+        >
           {data?.location}
         </Tag>
       </div>

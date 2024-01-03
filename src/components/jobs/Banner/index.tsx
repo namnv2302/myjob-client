@@ -33,7 +33,7 @@ const Banner = () => {
             <Col lg={{ span: 24 }}>
               <Form className={cx("form-search")}>
                 <Row style={{ height: "100%" }}>
-                  <Col lg={{ span: 11 }}>
+                  <Col lg={{ span: 15 }}>
                     <Form.Item
                       name="name"
                       style={{ marginBottom: 0, height: "100%" }}
@@ -48,7 +48,7 @@ const Banner = () => {
                       />
                     </Form.Item>
                   </Col>
-                  <Col lg={{ span: 10 }}>
+                  <Col lg={{ span: 6 }}>
                     <Form.Item
                       name="location"
                       style={{ marginBottom: 0, height: "100%" }}

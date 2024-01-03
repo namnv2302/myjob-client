@@ -12,3 +12,55 @@
     }
   }
 }
+
+.card {
+  margin-bottom: 20px;
+
+  .head-card {
+    display: flex;
+    align-items: center;
+
+    .logo-company {
+      margin-right: 16px;
+      height: 58px;
+    }
+
+    .text-info {
+      .job-name {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 4px;
+        max-height: 2.6rem;
+        line-height: 2.6rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+
+      .company-name {
+        width: 100%;
+        overflow: hidden;
+        max-height: 2rem;
+        line-height: 2rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 18px;
+
+    .option-item {
+      margin-bottom: 10px;
+    }
+  }
+
+  .apply-now {
+    margin-top: 16px;
+  }
+}

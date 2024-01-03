@@ -23,12 +23,19 @@
 .card {
   margin-bottom: 20px;
 
-  .head {
+  &.active {
+    border-color: transparent;
+    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16),
+      0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  }
+
+  .head-card {
     display: flex;
     align-items: center;
 
     .logo-company {
       margin-right: 16px;
+      height: 58px;
     }
 
     .text-info {
@@ -42,12 +49,27 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
       }
+
+      .company-name {
+        width: 100%;
+        overflow: hidden;
+        max-height: 2rem;
+        line-height: 2rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
     }
   }
 
   .options {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 18px;
+
+    .option-item {
+      margin-bottom: 10px;
+    }
   }
 }
