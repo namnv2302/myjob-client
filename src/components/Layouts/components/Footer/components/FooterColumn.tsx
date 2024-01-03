@@ -23,7 +23,7 @@ const FooterColumn = ({
         {data.map(({ icon, label }) => (
           <span key={uuIdV4()} className={cx("item")}>
             {icon ? (
-              <Image className={cx("icon")} src={icon} alt="icon" />
+              <Image className={cx("icon")} src={icon} alt="icon" priority />
             ) : (
               false
             )}

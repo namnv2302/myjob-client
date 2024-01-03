@@ -29,7 +29,7 @@ const Dashboard = () => {
       <div className={cx("inner")}>
         <Row gutter={{ lg: 16 }} align="middle">
           <Col lg={{ span: 12 }}>
-            <Image src={images.home8Image} alt="image" />
+            <Image src={images.home8Image} alt="image" priority />
           </Col>
           <Col lg={{ span: 12 }}>
             <Typography.Title level={5}>

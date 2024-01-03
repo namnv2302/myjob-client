@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import classNames from "classnames/bind";
 import styles from "@/styles/account/login.module.scss";
 import { login, whoAmI } from "@/apis/auth";
@@ -41,7 +42,9 @@ const LoginForm = () => {
       }
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      if (axios.isAxiosError(error)) {
+        message.error(error.response?.data.message);
+      }
       setLoading(false);
     }
   };

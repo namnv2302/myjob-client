@@ -7,6 +7,7 @@ const images = {
   facebookIcon: require("./facebook.svg").default,
   instagramIcon: require("./instagram.svg").default,
   youtubeIcon: require("./youtube.svg").default,
+  avatarDefault: require("./avatar-default.jpg"),
 };
 
 export default images;

@@ -12,7 +12,7 @@ const LoginRightPanel = ({ bg }: { bg?: boolean }) => {
     <>
       {bg ? (
         <div className={cx("wrapper")}>
-          <Image src={images.loginImage} alt="Image" />
+          <Image src={images.loginImage} alt="Image" priority />
         </div>
       ) : (
         <div className={cx("container")}>

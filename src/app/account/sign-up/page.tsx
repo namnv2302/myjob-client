@@ -18,7 +18,13 @@ const SignUpPage = () => {
       <Typography.Title level={5} className={cx("heading")}>
         Chào mừng bạn đến với
         <Link href={ROUTE_PATH.HOME} className={cx("logo")}>
-          <Image src={Logo} alt="Logo" width={46} className={cx("image")} />
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={46}
+            className={cx("image")}
+            priority
+          />
           <Typography.Title level={5} className={cx("logo-text")}>
             MyJob
           </Typography.Title>

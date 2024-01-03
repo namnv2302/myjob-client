@@ -25,9 +25,19 @@ const Banner = () => {
 
   return (
     <div className={cx("wrapper")}>
-      <Image src={images.bannerImage} alt="Banner" className={cx("image")} />
+      <Image
+        src={images.bannerImage}
+        alt="Banner"
+        className={cx("image")}
+        priority
+      />
       <div className={cx("wrap-lead")}>
-        <Image src={images.leadImage} alt="Lead" className={cx("lead")} />
+        <Image
+          src={images.leadImage}
+          alt="Lead"
+          className={cx("lead")}
+          priority
+        />
       </div>
       <div className={cx("container")}>
         <Row>

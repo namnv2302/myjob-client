@@ -24,15 +24,17 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   }, [dispatch]);
 
   return (
-    <div className={cx("wrapper")}>
-      <div className={cx("header")}>
-        <Header />
+    <>
+      <div className={cx("wrapper")}>
+        <div className={cx("header")}>
+          <Header />
+        </div>
+        <div className={cx("container")}>{children}</div>
+        <div className={cx("footer")}>
+          <Footer />
+        </div>
       </div>
-      <div className={cx("container")}>{children}</div>
-      <div className={cx("footer")}>
-        <Footer />
-      </div>
-    </div>
+    </>
   );
 };
 

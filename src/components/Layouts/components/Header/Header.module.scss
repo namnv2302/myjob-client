@@ -1,10 +1,15 @@
 .wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
   background-color: var(--header-bg-color);
   border-bottom: 1px solid #e9eaec;
+  z-index: 10;
 
   .left {
     display: flex;
@@ -36,6 +41,17 @@
       &:last-child {
         color: var(--white-color);
         background-color: #212f3f;
+      }
+    }
+
+    .authorization {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .avatar {
+        border-radius: 100%;
+        margin-right: 10px;
       }
     }
   }
