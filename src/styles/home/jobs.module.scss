@@ -7,8 +7,15 @@
     padding: 45px 0;
     width: var(--content-width-default);
 
-    .label {
+    .head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
       margin-bottom: 22px;
+
+      .label {
+        margin-bottom: 0;
+      }
     }
   }
 }

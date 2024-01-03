@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--jobs-bg-color);
+
+  .inner {
+    padding: 45px 0;
+    width: var(--content-width-default);
+
+    .jobs-list {
+      margin-top: 22px;
+    }
+  }
+}

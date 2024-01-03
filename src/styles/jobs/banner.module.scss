@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 340px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .inner {
+    position: relative;
+    width: var(--content-width-default);
+    height: 100%;
+  }
+
+  .body {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+
+    .heading {
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--white-color);
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .form-search {
+      height: 70px;
+      margin-top: 26px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.03);
+      background-color: var(--bg-color-default);
+
+      .job-name {
+        height: 68px;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        input::placeholder {
+          font-weight: 400;
+        }
+
+        .icon-search {
+          font-size: 2.4rem;
+          padding: 0 8px;
+          color: var(--text-second);
+        }
+      }
+
+      .location {
+        height: 68px;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+
+      .search-btn {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .button {
+          height: 46px;
+          border-radius: 50px;
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+}
