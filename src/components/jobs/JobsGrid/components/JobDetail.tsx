@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
 import {
   ClockCircleOutlined,
@@ -12,12 +12,14 @@ import styles from "@/styles/jobs/jobs-grid.module.scss";
 import { useAppSelector } from "@/redux/hooks";
 import { Level } from "@/constants/common";
 import { DEFAULT_DATE_FORMAT } from "@/constants/time";
+import ApplyModal from "@/components/jobs/JobsGrid/components/ApplyModal";
 
 const cx = classNames.bind(styles);
 
 const JobDetail = () => {
   const jobDescriptionRef = useRef<any>();
   const { currentJobChoose } = useAppSelector((state) => state.jobs);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (jobDescriptionRef.current) {
@@ -82,6 +84,7 @@ const JobDetail = () => {
               type="primary"
               block
               className={cx("apply-now")}
+              onClick={() => setOpenModal(true)}
             >
               Ứng tuyển ngay
             </Button>
@@ -92,6 +95,11 @@ const JobDetail = () => {
               style={{ padding: "0 0 10px 24px" }}
             ></div>
           </Card>
+          <ApplyModal
+            data={currentJobChoose}
+            open={openModal}
+            onOpen={setOpenModal}
+          />
         </>
       ) : (
         <Empty
